@@ -7,16 +7,10 @@ describe ParkOrganizer do
       {
         :id=>546,
         :name=>"Kalahari Resorts",
-        :city=>"Wisconsin Dells",
-        :state=>"Wisconsin",
-        :country=>"United States"
       },
       {
         :id=>547,
         :name=>"Little Amerricka",
-        :city=>"Marshall",
-        :state=>"Wisconsin",
-        :country=>"United States"
       }
     ]
 
@@ -24,16 +18,10 @@ describe ParkOrganizer do
       546 => {
         :id=>546,
         :name=>"Kalahari Resorts",
-        :city=>"Wisconsin Dells",
-        :state=>"Wisconsin",
-        :country=>"United States"
       },
       547 => {
         :id=>547,
         :name=>"Little Amerricka",
-        :city=>"Marshall",
-        :state=>"Wisconsin",
-        :country=>"United States"
       }
     }
 
@@ -42,7 +30,7 @@ describe ParkOrganizer do
     expect(organizer.by_id(input)).to eq expected
   end
 
-  it 'returns a hash where the key is the country and the info hash is the value' do
+  it 'returns a hash where the key is the country and the values are arrays of parks for that country' do
     input = [
       {
         :id=>546,
@@ -98,7 +86,7 @@ describe ParkOrganizer do
     expect(organizer.by_country(input)).to eq expected
   end
 
-  it 'returns a hash where the key is the state and the country and the info hash is the value' do
+  it 'returns a hash where the key is the state and the country and the value is an array of park info for that state and country' do
     input = [
       {
         :id=>3,
